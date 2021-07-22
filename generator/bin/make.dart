@@ -10,6 +10,7 @@ import 'package:alfred/bluffer/base/locale.dart';
 import 'package:alfred/bluffer/base/publish/publish.dart';
 import 'package:alfred/bluffer/base/publish/serialize.dart';
 import 'package:alfred/bluffer/base/text.dart';
+import 'package:alfred/bluffer/html/html_impl.dart';
 import 'package:alfred/bluffer/widgets/click/click.dart';
 import 'package:alfred/bluffer/widgets/container/container.dart';
 import 'package:alfred/bluffer/widgets/flex/flex.dart';
@@ -20,17 +21,6 @@ import 'package:alfred/bluffer/widgets/text/text.dart';
 import 'package:alfred/bluffer/widgets/theme/theme.dart';
 import 'package:alfred/bluffer/widgets/widget/interface/widget.dart';
 
-// custom scripts
-//
-/*   <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131367984-1"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'UA-131367984-1');
-   </script> */
 void main() {
   publishApp(
     serializeTo: (final path, final element) => File(path).writeAsStringSync(serializeHtml(html: element)),
@@ -40,11 +30,24 @@ void main() {
       ],
       application: (final route) => AppWidget(
         route: route,
-        // TODO support scripts tags that have content.
+        scriptLinks: [
+          ScriptElementImpl(
+            async: true,
+            src: "https://www.googletagmanager.com/gtag/js?id=UA-131367984-1",
+          ),
+          ScriptElementImpl(
+            content: """
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-131367984-1');""",
+          ),
+        ],
       ),
       routes: [
         UrlWidgetRoute(
-          title: (context) => "Da Gino - Rheinstetten-Mörsch Karlsruhe | Restaurant & Pizzeria",
+          title: (context) => "Da Gino - Rheinstetten-Mörsch, Karlsruhe | Restaurant & Pizzeria",
           relativeUrl: 'index',
           builder: (context) => Padding(
             padding: const EdgeInsets.all(20),
@@ -52,16 +55,23 @@ void main() {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 const Text(
-                  "Restaurant Da Gino in Rheinstetten",
+                  "Restaurant Da Gino",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                const SizedBox(height: 4.0),
+                const Text(
+                  "in Rheinstetten-Mörsch (Karlsruhe)",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                ...paddedDivider(),
                 Row(
                   children: [
                     const Text("Speisekarte:"),
@@ -72,9 +82,7 @@ void main() {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 Row(
                   children: [
                     const Text("Navigation"),
@@ -85,9 +93,7 @@ void main() {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 Row(
                   children: [
                     const Text("Bilder"),
@@ -98,9 +104,7 @@ void main() {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 Row(
                   children: [
                     const Text("Telefon:"),
@@ -111,9 +115,7 @@ void main() {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 Row(
                   children: [
                     const Text("E-Mail:"),
@@ -124,9 +126,7 @@ void main() {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 const Text(
                   "Öffnungszeiten",
                   style: TextStyle(
@@ -158,42 +158,32 @@ void main() {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("  Ruhetag"),
+                        Text("Ruhetag"),
                         SizedBox(height: 2.0),
-                        Text("  17:00 - 21:00"),
+                        Text("11:30 - 14:00 & 17:00 - 22:30"),
                         SizedBox(height: 2.0),
-                        Text("  11:00 - 14:00 & 17:00 - 21:00"),
+                        Text("11:30 - 14:00 & 17:00 - 22:30"),
                         SizedBox(height: 2.0),
-                        Text("  11:00 - 14:00 & 17:00 - 21:00"),
+                        Text("11:30 - 14:00 & 17:00 - 22:30"),
                         SizedBox(height: 2.0),
-                        Text("  11:00 - 14:00 & 17:00 - 21:00"),
+                        Text("11:30 - 14:00 & 17:00 - 22:30"),
                         SizedBox(height: 2.0),
-                        Text("  17:00 - 21:00"),
+                        Text("17:00 - 22:30"),
                         SizedBox(height: 2.0),
-                        Text("  11:30 - 14:00 & 17:00 - 21:00"),
+                        Text("11:30 - 14:00 & 17:00 - 21:30"),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
-                const Text(
-                  "Adresse",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
-                ),
+                ...paddedDivider(),
                 const SizedBox(height: 4.0),
                 const Text("Rheinaustraße 53"),
                 const SizedBox(height: 2.0),
                 const Text("76287 Rheinstetten"),
-                const SizedBox(height: 8.0),
-                divider,
-                const SizedBox(height: 8.0),
+                ...paddedDivider(),
                 const Image(
                   image: ImageProvider.asset("logo.png"),
+                  semanticsLabel: "Da Gino Logo",
                   width: 100,
                 ),
               ],
@@ -203,6 +193,12 @@ void main() {
       ],
     ),
   );
+}
+
+Iterable<Widget> paddedDivider() sync* {
+  yield const SizedBox(height: 8.0);
+  yield divider;
+  yield const SizedBox(height: 8.0);
 }
 
 const divider = Container(

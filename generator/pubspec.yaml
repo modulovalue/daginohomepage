@@ -1,17 +1,13 @@
 name: generator
-description: A starting point for Dart libraries or applications.
-# version: 1.0.0
-# homepage: https://www.example.com
 
 environment:
   sdk: '>=2.13.0-0 <3.0.0'
 
 dependencies:
-  path: ^1.7.0
   alfred:
     git:
       url: https://github.com/modulovalue/alfred.git
-      ref: 191956b
+      ref: 37d1706
+
 dev_dependencies:
   extra_pedantic: ^1.5.0
-  test: ^1.6.0
