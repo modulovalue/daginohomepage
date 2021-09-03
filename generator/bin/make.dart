@@ -23,7 +23,11 @@ import 'package:alfred/bluffer/widgets/widget/interface/widget.dart';
 
 void main() {
   publishApp(
-    serializeTo: (final path, final element) => File(path).writeAsStringSync(serializeHtml(html: element)),
+    serializeTo: (final path, final element) => File(path).writeAsStringSync(
+      serializeHtml(
+        html: element,
+      ),
+    ),
     root: App(
       supportedLocales: [
         const Locale('de', 'DE'),
@@ -47,9 +51,9 @@ gtag('config', 'UA-131367984-1');""",
       ),
       routes: [
         UrlWidgetRoute(
-          title: (context) => "Da Gino - Rheinstetten-Mörsch, Karlsruhe | Restaurant & Pizzeria",
+          title: (final context) => "Da Gino - Rheinstetten-Mörsch, Karlsruhe | Restaurant & Pizzeria",
           relativeUrl: 'index',
-          builder: (context) => Padding(
+          builder: (final context) => Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,62 +75,70 @@ gtag('config', 'UA-131367984-1');""",
                   ),
                   textAlign: TextAlign.center,
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
+                const Text(
+                  "(Bedienung/Küchenhilfe gesucht!)",
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                ..._paddedDivider(),
                 Row(
                   children: [
                     const Text("Speisekarte:"),
                     const SizedBox(width: 8.0),
-                    button(
+                    _button(
                       "http://dagino.de/mitnahmespeisekarte.pdf",
                       "Mitnahme-Speisekarte",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 Row(
                   children: [
                     const Text("Navigation"),
                     const SizedBox(width: 8.0),
-                    button(
+                    _button(
                       "http://dagino.de/g",
                       "Google Maps",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 Row(
                   children: [
                     const Text("Bilder"),
                     const SizedBox(width: 8.0),
-                    button(
+                    _button(
                       "http://dagino.de/g",
                       "Bilder",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 Row(
                   children: [
                     const Text("Telefon:"),
                     const SizedBox(width: 8.0),
-                    button(
+                    _button(
                       "tel:072429538400",
                       "07242 9538400",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 Row(
                   children: [
                     const Text("E-Mail:"),
                     const SizedBox(width: 8.0),
-                    button(
+                    _button(
                       "mailto:kontakt@dagino.de",
                       "kontakt@dagino.de",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 const Text(
                   "Öffnungszeiten",
                   style: TextStyle(
@@ -175,12 +187,12 @@ gtag('config', 'UA-131367984-1');""",
                     ),
                   ],
                 ),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 const SizedBox(height: 4.0),
                 const Text("Rheinaustraße 53"),
                 const SizedBox(height: 2.0),
                 const Text("76287 Rheinstetten"),
-                ...paddedDivider(),
+                ..._paddedDivider(),
                 const Image(
                   image: ImageProvider.asset("logo.png"),
                   semanticsLabel: "Da Gino Logo",
@@ -195,21 +207,19 @@ gtag('config', 'UA-131367984-1');""",
   );
 }
 
-Iterable<Widget> paddedDivider() sync* {
+Iterable<Widget> _paddedDivider() sync* {
   yield const SizedBox(height: 8.0);
-  yield divider;
+  yield const Container(
+    height: 1.0,
+    width: 130.0,
+    decoration: BoxDecoration(
+      color: Color(0x66000000),
+    ),
+  );
   yield const SizedBox(height: 8.0);
 }
 
-const divider = Container(
-  height: 1.0,
-  width: 130.0,
-  decoration: BoxDecoration(
-    color: Color(0x66000000),
-  ),
-);
-
-Widget button(
+Widget _button(
   final String target,
   final String info,
 ) =>
