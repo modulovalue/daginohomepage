@@ -10,4 +10,4 @@ dependencies:
       ref: 37d1706
 
 dev_dependencies:
-  extra_pedantic: ^1.5.0
+  extra_pedantic: ^2.0.0
