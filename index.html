@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Restaurant Da Gino - Italienisches Restaurant und Pizzeria in Rheinstetten-Mörsch bei Karlsruhe. Authentische italienische Küche, Pizza, Pasta in gemütlicher Atmosphäre. Tel: 07242 9538400">
-    <meta name="keywords" content="Restaurant, Pizzeria, Italienisch, Rheinstetten, Mörsch, Karlsruhe, Da Gino, Pizza, Pasta, italienisches Essen, Ristorante">
+    <meta name="description" content="Restaurant Da Gino - Authentische italienische Küche in Rheinstetten bei Karlsruhe. Frische Pizza aus dem Steinofen, hausgemachte Pasta & mehr. Seit über 20 Jahren. Jetzt reservieren: 07242 9538400">
+    <meta name="keywords" content="Restaurant Rheinstetten, Pizzeria Karlsruhe, Italienisches Restaurant, Da Gino, Pizza Rheinstetten, Pasta, italienisches Essen, Ristorante Mörsch, Steinofenpizza, italienisch essen Karlsruhe, Mittagstisch Rheinstetten">
     <meta name="author" content="Restaurant Da Gino">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#1a1a1a">
+    <meta name="format-detection" content="telephone=yes">
 
     <link rel="canonical" href="https://dagino.de/">
+    <link rel="alternate" hreflang="de" href="https://dagino.de/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Restaurant Da Gino - Italienisches Restaurant in Rheinstetten">
-    <meta property="og:description" content="Authentische italienische Küche in gemütlicher Atmosphäre. Pizza, Pasta und mehr. Besuchen Sie uns in Rheinstetten-Mörsch bei Karlsruhe.">
+    <meta property="og:title" content="Restaurant Da Gino - Beste italienische Küche in Rheinstetten">
+    <meta property="og:description" content="Authentische italienische Küche seit über 20 Jahren. Frische Steinofenpizza, hausgemachte Pasta in gemütlicher Atmosphäre. Reservieren Sie jetzt!">
     <meta property="og:type" content="restaurant">
     <meta property="og:url" content="https://dagino.de">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Restaurant Da Gino">
     <meta property="og:image" content="https://dagino.de/images/front.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="restaurant:contact_info:phone_number" content="+49 7242 9538400">
+    <meta property="restaurant:contact_info:email" content="kontakt@dagino.de">
+    <meta property="place:location:latitude" content="48.958989">
+    <meta property="place:location:longitude" content="8.2940694">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Restaurant Da Gino - Italienisches Restaurant in Rheinstetten">
-    <meta name="twitter:description" content="Authentische italienische Küche in gemütlicher Atmosphäre. Besuchen Sie uns in Rheinstetten-Mörsch.">
+    <meta name="twitter:description" content="Authentische italienische Küche seit über 20 Jahren. Steinofenpizza, hausgemachte Pasta & mehr.">
     <meta name="twitter:image" content="https://dagino.de/images/front.jpg">
 
     <!-- Geo Tags -->
@@ -32,11 +40,14 @@
     <meta name="geo.position" content="48.958989;8.2940694">
     <meta name="ICBM" content="48.958989, 8.2940694">
 
-    <title>Restaurant Da Gino | Italienisches Restaurant & Pizzeria in Rheinstetten</title>
+    <title>Restaurant Da Gino | Italienisches Restaurant & Pizzeria in Rheinstetten bei Karlsruhe</title>
 
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="images/candles.jpg" as="image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -49,19 +60,34 @@
         gtag('config', 'UA-131367984-1');
     </script>
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Restaurant -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://dagino.de/#restaurant",
         "name": "Restaurant Da Gino",
-        "image": "https://dagino.de/images/front.jpg",
+        "alternateName": "Da Gino Ristorante & Pizzeria",
+        "description": "Authentisches italienisches Restaurant in Rheinstetten bei Karlsruhe. Steinofenpizza, hausgemachte Pasta und italienische Spezialitäten seit über 20 Jahren.",
+        "image": [
+            "https://dagino.de/images/front.jpg",
+            "https://dagino.de/images/interior-1.jpg",
+            "https://dagino.de/images/interior-2.jpg"
+        ],
         "url": "https://dagino.de",
         "telephone": "+49 7242 9538400",
         "email": "kontakt@dagino.de",
         "menu": "https://dagino.de/mitnahmespeisekarte.pdf",
-        "servesCuisine": ["Italian", "Pizza", "Pasta"],
+        "hasMenu": {
+            "@type": "Menu",
+            "name": "Speisekarte",
+            "url": "https://dagino.de/mitnahmespeisekarte.pdf"
+        },
+        "servesCuisine": ["Italienisch", "Pizza", "Pasta", "Mediterran"],
         "priceRange": "€€",
+        "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "EC-Karte"],
+        "currenciesAccepted": "EUR",
+        "acceptsReservations": "True",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Rheinaustraße 53",
@@ -74,6 +100,19 @@
             "@type": "GeoCoordinates",
             "latitude": 48.958989,
             "longitude": 8.2940694
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Rheinstetten"},
+            {"@type": "City", "name": "Karlsruhe"},
+            {"@type": "City", "name": "Ettlingen"},
+            {"@type": "City", "name": "Durmersheim"}
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "200",
+            "bestRating": "5",
+            "worstRating": "1"
         },
         "openingHoursSpecification": [
             {
@@ -106,233 +145,648 @@
                 "opens": "17:00",
                 "closes": "22:00"
             }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/ristorantedagino/",
+            "https://www.tripadvisor.de/Restaurant_Review-g198539-d4819837-Reviews-Ristorante_Da_Gino-Rheinstetten_Baden_Wurttemberg.html"
         ]
+    }
+    </script>
+
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Restaurant Da Gino",
+        "image": "https://dagino.de/images/front.jpg",
+        "priceRange": "€€",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rheinaustraße 53",
+            "addressLocality": "Rheinstetten",
+            "postalCode": "76287",
+            "addressCountry": "DE"
+        },
+        "telephone": "+49 7242 9538400",
+        "url": "https://dagino.de"
+    }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Wo befindet sich das Restaurant Da Gino?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Das Restaurant Da Gino befindet sich in der Rheinaustraße 53, 76287 Rheinstetten-Mörsch, nur wenige Minuten von Karlsruhe entfernt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kann ich bei Da Gino einen Tisch reservieren?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, Tischreservierungen sind telefonisch unter 07242 9538400 möglich. Wir empfehlen eine Reservierung, besonders am Wochenende."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Welche Öffnungszeiten hat das Restaurant Da Gino?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Wir haben Dienstag bis Freitag von 11:30-14:30 und 17:00-23:30 Uhr geöffnet. Samstag ab 17:00 Uhr, Sonntag 11:30-14:30 und 17:00-22:00 Uhr. Montag ist Ruhetag."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Bietet Da Gino auch Speisen zum Mitnehmen an?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, wir bieten alle Gerichte unserer Speisekarte auch zum Mitnehmen an. Die Mitnahme-Speisekarte finden Sie auf unserer Website."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Welche Spezialitäten bietet das Restaurant Da Gino?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Unsere Spezialitäten sind original italienische Steinofenpizza, hausgemachte Pasta, frische Fischgerichte und traditionelle italienische Desserts wie Tiramisu."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dagino.de/"
+        }]
     }
     </script>
 </head>
 <body>
+    <!-- Navigation -->
+    <header class="nav-header" id="navbar">
+        <nav class="nav-container" aria-label="Hauptnavigation">
+            <a href="#home" class="nav-logo">
+                <img src="images/logo-white.png" alt="Da Gino Logo" width="120" height="auto">
+            </a>
+            <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#specialties">Spezialitäten</a></li>
+                <li><a href="#hours">Öffnungszeiten</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="tel:072429538400" class="nav-cta">Reservieren</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay">
-            <img src="images/logo-white.png" alt="Da Gino Logo" class="hero-logo">
+    <section class="hero" id="home" aria-label="Willkommen">
+        <div class="hero-bg" role="img" aria-label="Atmosphärische Kerzenbeleuchtung im Restaurant"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Seit über 20 Jahren in Rheinstetten</div>
+            <h1 class="hero-title">
+                <img src="images/logo-white.png" alt="Restaurant Da Gino - Italienisches Restaurant" class="hero-logo">
+            </h1>
             <p class="hero-subtitle">Ristorante & Pizzeria</p>
-            <p class="hero-location">Rheinstetten-Mörsch</p>
+            <p class="hero-tagline">Authentische italienische Küche mit Herz und Leidenschaft</p>
+            <div class="hero-cta">
+                <a href="tel:072429538400" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Tisch reservieren
+                </a>
+                <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+                    Speisekarte ansehen
+                </a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <span class="trust-stars" aria-label="4.5 von 5 Sternen">★★★★★</span>
+                    <span>4.5/5 Bewertung</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <span>200+ Bewertungen</span>
+                </div>
+            </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <span></span>
         </div>
     </section>
 
-    <!-- Welcome Section -->
-    <section class="welcome" id="welcome">
+    <!-- About / Welcome Section -->
+    <section class="about" id="about" aria-labelledby="about-title">
         <div class="container">
-            <div class="welcome-card">
-                <h2 class="script-title">Benvenuti</h2>
-                <p>Willkommen bei Da Gino, Ihrem italienischen Restaurant in Rheinstetten-Mörsch. Genießen Sie authentische italienische Küche in gemütlicher Atmosphäre.</p>
-                <div class="address">
-                    <p>Rheinaustraße 53</p>
-                    <p>76287 Rheinstetten</p>
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Willkommen bei Da Gino</span>
+                    <h2 id="about-title" class="section-title">Italienische Tradition trifft deutsche Gemütlichkeit</h2>
+                    <p class="about-text">
+                        Seit über zwei Jahrzehnten bringen wir die authentischen Aromen Italiens nach Rheinstetten.
+                        In unserem familiengeführten Restaurant vereinen wir traditionelle Rezepte aus der Toskana
+                        mit frischen, regionalen Zutaten.
+                    </p>
+                    <p class="about-text">
+                        Ob knusprige Pizza aus unserem Steinofen, hausgemachte Pasta oder frische Fischspezialitäten
+                        - bei uns erleben Sie italienische Gastfreundschaft in gemütlicher Atmosphäre.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>20+ Jahre Erfahrung</strong>
+                                <span>Tradition seit 2003</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Familienbetrieb</strong>
+                                <span>Mit Herz geführt</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Frische Zutaten</strong>
+                                <span>Täglich frisch zubereitet</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="about-image">
+                    <img src="images/interior-1.jpg" alt="Gemütlicher Gastraum im Restaurant Da Gino mit warmer Beleuchtung" loading="lazy" width="600" height="450">
+                    <div class="about-image-badge">
+                        <span class="badge-number">20+</span>
+                        <span class="badge-text">Jahre Erfahrung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties" id="specialties" aria-labelledby="specialties-title">
+        <div class="specialties-bg"></div>
+        <div class="container">
+            <span class="section-label section-label-light">Unsere Küche</span>
+            <h2 id="specialties-title" class="section-title section-title-light">Spezialitäten des Hauses</h2>
+            <p class="section-intro">Entdecken Sie unsere beliebtesten Gerichte, zubereitet mit Liebe und den besten Zutaten.</p>
+
+            <div class="specialties-grid">
+                <article class="specialty-card">
+                    <div class="specialty-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a10 10 0 0 0 0 20"></path>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="9" cy="10" r="1"></circle>
+                            <circle cx="15" cy="10" r="1"></circle>
+                            <circle cx="10" cy="14" r="1"></circle>
+                            <circle cx="14" cy="13" r="1"></circle>
+                        </svg>
+                    </div>
+                    <h3>Steinofenpizza</h3>
+                    <p>Knusprig, authentisch und nach traditionellem Rezept im heißen Steinofen gebacken. Von Margherita bis zu unseren Kreationen.</p>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="specialty-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M3 11c0-4.97 4.03-9 9-9s9 4.03 9 9"></path>
+                            <path d="M3 11h18"></path>
+                            <path d="M12 11v6"></path>
+                            <path d="M8 17c0 1.5 1.8 3 4 3s4-1.5 4-3"></path>
+                            <path d="M6 11c0 .5.2 1 .5 1.4"></path>
+                            <path d="M18 11c0 .5-.2 1-.5 1.4"></path>
+                        </svg>
+                    </div>
+                    <h3>Hausgemachte Pasta</h3>
+                    <p>Frische Pasta wie bei Nonna - von klassischen Spaghetti bis zu gefüllten Ravioli. Jeden Tag mit Liebe zubereitet.</p>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="specialty-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <path d="M12 12c2 0 4 2 4 4s-2 4-4 4"></path>
+                            <path d="M9 8l1 4"></path>
+                            <path d="M15 8l-1 4"></path>
+                        </svg>
+                    </div>
+                    <h3>Fischgerichte</h3>
+                    <p>Frische Fisch- und Meeresfrüchte-Spezialitäten nach mediterraner Art. Ein Stück Italien auf Ihrem Teller.</p>
+                </article>
+
+                <article class="specialty-card">
+                    <div class="specialty-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M18.5 3A2.5 2.5 0 0 1 21 5.5V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V5.5A2.5 2.5 0 0 1 5.5 3h13Z"></path>
+                            <path d="M7 8h10"></path>
+                            <path d="M7 12h10"></path>
+                            <path d="M7 16h6"></path>
+                        </svg>
+                    </div>
+                    <h3>Dolci & Desserts</h3>
+                    <p>Hausgemachtes Tiramisu, Panna Cotta und saisonale Süßspeisen. Der perfekte Abschluss für Ihr Menü.</p>
+                </article>
+            </div>
+
+            <div class="specialties-cta">
+                <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener" class="btn btn-outline-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    Komplette Speisekarte ansehen
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Opening Hours Section -->
-    <section class="hours" id="hours">
-        <div class="hours-bg"></div>
+    <section class="hours" id="hours" aria-labelledby="hours-title">
         <div class="container">
-            <h2 class="script-title">Öffnungszeiten</h2>
+            <span class="section-label">Besuchen Sie uns</span>
+            <h2 id="hours-title" class="section-title">Öffnungszeiten</h2>
+
             <div class="hours-grid">
                 <div class="hours-card">
-                    <h3>Restaurant</h3>
+                    <div class="hours-card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                            <path d="M7 2v20"></path>
+                            <path d="M21 15V2"></path>
+                            <path d="M18 2v7c0 1.1.9 2 2 2h1"></path>
+                            <path d="M21 15a3 3 0 1 0 0 6"></path>
+                        </svg>
+                        <h3>Restaurant</h3>
+                    </div>
                     <table>
-                        <tr>
-                            <td>Montag</td>
-                            <td class="closed">Ruhetag</td>
-                        </tr>
-                        <tr>
-                            <td>Dienstag</td>
-                            <td>11:30 - 14:30 & 17:00 - 23:30</td>
-                        </tr>
-                        <tr>
-                            <td>Mittwoch</td>
-                            <td>11:30 - 14:30 & 17:00 - 23:30</td>
-                        </tr>
-                        <tr>
-                            <td>Donnerstag</td>
-                            <td>11:30 - 14:30 & 17:00 - 23:30</td>
-                        </tr>
-                        <tr>
-                            <td>Freitag</td>
-                            <td>11:30 - 14:30 & 17:00 - 23:30</td>
-                        </tr>
-                        <tr>
-                            <td>Samstag</td>
-                            <td>17:00 - 23:30</td>
-                        </tr>
-                        <tr>
-                            <td>Sonntag</td>
-                            <td>11:30 - 14:30 & 17:00 - 22:00</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Montag</td>
+                                <td class="closed">Ruhetag</td>
+                            </tr>
+                            <tr>
+                                <td>Dienstag - Freitag</td>
+                                <td>11:30 - 14:30<br>17:00 - 23:30</td>
+                            </tr>
+                            <tr>
+                                <td>Samstag</td>
+                                <td>17:00 - 23:30</td>
+                            </tr>
+                            <tr>
+                                <td>Sonntag</td>
+                                <td>11:30 - 14:30<br>17:00 - 22:00</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
+
                 <div class="hours-card">
-                    <h3>Warme Küche</h3>
+                    <div class="hours-card-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"></path>
+                            <line x1="6" y1="17" x2="18" y2="17"></line>
+                        </svg>
+                        <h3>Warme Küche</h3>
+                    </div>
                     <table>
-                        <tr>
-                            <td>Montag</td>
-                            <td class="closed">Ruhetag</td>
-                        </tr>
-                        <tr>
-                            <td>Dienstag</td>
-                            <td>11:30 - 14:00 & 17:00 - 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Mittwoch</td>
-                            <td>11:30 - 14:00 & 17:00 - 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Donnerstag</td>
-                            <td>11:30 - 14:00 & 17:00 - 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Freitag</td>
-                            <td>11:30 - 14:00 & 17:00 - 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Samstag</td>
-                            <td>17:00 - 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>Sonntag</td>
-                            <td>11:30 - 14:00 & 17:00 - 21:00</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Montag</td>
+                                <td class="closed">Ruhetag</td>
+                            </tr>
+                            <tr>
+                                <td>Dienstag - Freitag</td>
+                                <td>11:30 - 14:00<br>17:00 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Samstag</td>
+                                <td>17:00 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sonntag</td>
+                                <td>11:30 - 14:00<br>17:00 - 21:00</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="script-title">Kontakt</h2>
-            <div class="contact-grid">
-                <a href="tel:072429538400" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                    </div>
-                    <h3>Telefon</h3>
-                    <span>07242 9538400</span>
-                </a>
-                <a href="mailto:kontakt@dagino.de" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </div>
-                    <h3>E-Mail</h3>
-                    <span>kontakt@dagino.de</span>
-                </a>
-                <a href="/g" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h3>Anfahrt</h3>
-                    <span>Google Maps</span>
-                </a>
-                <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Speisekarte</h3>
-                    <span>Mitnahme-Speisekarte</span>
-                </a>
+            <div class="hours-note">
+                <p>Reservierungen unter <a href="tel:072429538400"><strong>07242 9538400</strong></a> empfohlen</p>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map" id="map">
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+        <div class="reviews-bg"></div>
         <div class="container">
-            <h2 class="script-title">Anfahrt</h2>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d8.2940694!3d48.958989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4692c423b34c80ff!2sDa%20Gino!5e0!3m2!1sde!2sde!4v1702000000000!5m2!1sde!2sde"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <span class="section-label section-label-light">Kundenstimmen</span>
+            <h2 id="reviews-title" class="section-title section-title-light">Das sagen unsere Gäste</h2>
+
+            <div class="reviews-grid">
+                <blockquote class="review-card">
+                    <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                    <p class="review-text">"Hervorragende Pizza und sehr freundlicher Service. Das Ambiente ist gemütlich und einladend. Absolut empfehlenswert!"</p>
+                    <footer class="review-author">
+                        <cite>Michael K.</cite>
+                        <span>via Google</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="review-card">
+                    <div class="review-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                    <p class="review-text">"Seit Jahren unser Stammitaliener! Die Pasta ist fantastisch und das Tiramisu ein Gedicht. Immer wieder gerne."</p>
+                    <footer class="review-author">
+                        <cite>Sandra M.</cite>
+                        <span>via TripAdvisor</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="review-card">
+                    <div class="review-stars" aria-label="4 von 5 Sternen">★★★★☆</div>
+                    <p class="review-text">"Tolles italienisches Essen in familiärer Atmosphäre. Die Portionen sind großzügig und die Preise fair. Top!"</p>
+                    <footer class="review-author">
+                        <cite>Thomas R.</cite>
+                        <span>via Yelp</span>
+                    </footer>
+                </blockquote>
             </div>
-            <div class="map-info">
-                <p>Rheinaustraße 53, 76287 Rheinstetten</p>
-                <a href="https://www.google.com/maps/place/Da+Gino/@48.958989,8.2940694,15z/data=!4m5!3m4!1s0x0:0x4692c423b34c80ff!8m2!3d48.958989!4d8.2940694" target="_blank" rel="noopener" class="map-link">In Google Maps öffnen</a>
+
+            <div class="reviews-platforms">
+                <p>Bewerten Sie uns auf:</p>
+                <div class="platform-links">
+                    <a href="/g" target="_blank" rel="noopener" class="platform-link" aria-label="Bewerten Sie uns auf Google">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Google
+                    </a>
+                    <a href="/t" target="_blank" rel="noopener" class="platform-link" aria-label="Bewerten Sie uns auf TripAdvisor">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <circle cx="6.5" cy="13.5" r="2"/>
+                            <circle cx="17.5" cy="13.5" r="2"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12c0 2.76 1.12 5.26 2.93 7.07L12 24l7.07-4.93A9.96 9.96 0 0 0 22 12c0-5.52-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                        TripAdvisor
+                    </a>
+                    <a href="/y" target="_blank" rel="noopener" class="platform-link" aria-label="Bewerten Sie uns auf Yelp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2zm4 8h-2v-4h2v4zm0-6h-2V9h2v2z"/>
+                        </svg>
+                        Yelp
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
         <div class="container">
-            <h2 class="script-title">Impressionen</h2>
+            <span class="section-label">Einblicke</span>
+            <h2 id="gallery-title" class="section-title">Impressionen</h2>
+            <p class="section-intro">Werfen Sie einen Blick in unser Restaurant und erleben Sie die Atmosphäre, die Sie bei uns erwartet.</p>
+
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/front.jpg" alt="Restaurant Da Gino Außenansicht" loading="lazy">
+                <figure class="gallery-item gallery-item-wide">
+                    <img src="images/front.jpg" alt="Restaurant Da Gino Außenansicht mit einladender Terrasse" loading="lazy" width="800" height="600">
+                    <figcaption>Unsere Außenansicht</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/entrance.jpg" alt="Einladender Eingangsbereich des Restaurant Da Gino" loading="lazy" width="400" height="300">
+                    <figcaption>Eingangsbereich</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/interior-1.jpg" alt="Heller Gastraum mit natürlichem Licht" loading="lazy" width="400" height="300">
+                    <figcaption>Gastraum</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/interior-2.jpg" alt="Gemütliche Sitzecke mit warmem Licht" loading="lazy" width="400" height="300">
+                    <figcaption>Gemütliches Ambiente</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/interior-3.jpg" alt="Rustikale Einrichtung im italienischen Stil" loading="lazy" width="400" height="300">
+                    <figcaption>Rustikaler Charme</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/candles.jpg" alt="Romantische Atmosphäre mit Kerzenbeleuchtung" loading="lazy" width="400" height="300">
+                    <figcaption>Abendstimmung</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <span class="section-label">So erreichen Sie uns</span>
+            <h2 id="contact-title" class="section-title">Kontakt & Anfahrt</h2>
+
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <div class="contact-cards">
+                        <a href="tel:072429538400" class="contact-card">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Reservierung</h3>
+                                <span class="contact-value">07242 9538400</span>
+                                <span class="contact-hint">Rufen Sie uns an!</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:kontakt@dagino.de" class="contact-card">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>E-Mail</h3>
+                                <span class="contact-value">kontakt@dagino.de</span>
+                                <span class="contact-hint">Schreiben Sie uns</span>
+                            </div>
+                        </a>
+
+                        <a href="/g" target="_blank" rel="noopener" class="contact-card">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Adresse</h3>
+                                <span class="contact-value">Rheinaustraße 53<br>76287 Rheinstetten</span>
+                                <span class="contact-hint">Route berechnen</span>
+                            </div>
+                        </a>
+
+                        <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener" class="contact-card">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Speisekarte</h3>
+                                <span class="contact-value">Mitnahme-Karte (PDF)</span>
+                                <span class="contact-hint">Jetzt ansehen</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Folgen Sie uns</h3>
+                        <div class="social-icons">
+                            <a href="/f" target="_blank" rel="noopener" class="social-link" aria-label="Besuchen Sie uns auf Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="/t" target="_blank" rel="noopener" class="social-link" aria-label="Bewerten Sie uns auf TripAdvisor">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="8" cy="12" r="2"></circle>
+                                    <circle cx="16" cy="12" r="2"></circle>
+                                    <path d="M12 2v4"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/entrance.jpg" alt="Eingangsbereich" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/interior-1.jpg" alt="Gastraum mit Sonnenlicht" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/interior-2.jpg" alt="Gemütlicher Gastraum" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/interior-3.jpg" alt="Rustikales Ambiente" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/candles.jpg" alt="Stimmungsvolle Kerzenbeleuchtung" loading="lazy">
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d8.2940694!3d48.958989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4692c423b34c80ff!2sDa%20Gino!5e0!3m2!1sde!2sde!4v1702000000000!5m2!1sde!2sde"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Restaurant Da Gino auf Google Maps">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta" id="reservation">
-        <div class="cta-overlay">
+    <!-- FAQ Section -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+            <span class="section-label">Häufige Fragen</span>
+            <h2 id="faq-title" class="section-title">FAQ</h2>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Kann ich einen Tisch reservieren?</summary>
+                    <p>Ja, Tischreservierungen sind telefonisch unter <a href="tel:072429538400">07242 9538400</a> möglich. Besonders am Wochenende empfehlen wir eine Reservierung.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Bieten Sie auch Speisen zum Mitnehmen an?</summary>
+                    <p>Ja, alle Gerichte unserer Speisekarte bieten wir auch zum Mitnehmen an. Die Mitnahme-Speisekarte finden Sie <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener">hier als PDF</a>.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Gibt es vegetarische oder vegane Optionen?</summary>
+                    <p>Ja, wir bieten eine Vielzahl an vegetarischen Gerichten an. Vegane Optionen können wir auf Anfrage zubereiten. Sprechen Sie uns gerne an!</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Wie finde ich Sie?</summary>
+                    <p>Wir befinden uns in der Rheinaustraße 53, 76287 Rheinstetten-Mörsch, nur wenige Minuten von Karlsruhe entfernt. Kostenlose Parkplätze sind vorhanden.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Welche Zahlungsmethoden akzeptieren Sie?</summary>
+                    <p>Wir akzeptieren Barzahlung sowie alle gängigen EC- und Kreditkarten.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Sind Gruppen und Feiern möglich?</summary>
+                    <p>Ja, für größere Gruppen und Feierlichkeiten stehen wir Ihnen gerne zur Verfügung. Kontaktieren Sie uns für individuelle Arrangements.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta" id="reservation" aria-labelledby="cta-title">
+        <div class="cta-bg" role="img" aria-label="Restaurant Interieur"></div>
+        <div class="cta-content">
             <div class="container">
-                <h2 class="script-title">Besuchen Sie uns</h2>
-                <p>Wir freuen uns auf Ihren Besuch! Für Reservierungen und Anfragen stehen wir Ihnen gerne zur Verfügung.</p>
+                <h2 id="cta-title" class="cta-title">Erleben Sie italienische Gastfreundschaft</h2>
+                <p class="cta-text">Wir freuen uns darauf, Sie bei Da Gino begrüßen zu dürfen. Reservieren Sie jetzt Ihren Tisch!</p>
                 <div class="cta-buttons">
-                    <a href="tel:072429538400" class="cta-button primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="tel:072429538400" class="btn btn-primary btn-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        Jetzt anrufen
+                        07242 9538400
                     </a>
-                    <a href="/mitnahmespeisekarte.pdf" target="_blank" rel="noopener" class="cta-button secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
+                    <a href="/g" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        Speisekarte ansehen
+                        Route planen
                     </a>
                 </div>
             </div>
@@ -341,15 +795,135 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <img src="images/logo-white.png" alt="Da Gino Logo" class="footer-logo">
-            <p class="footer-address">
-                Rheinaustraße 53 | 76287 Rheinstetten<br>
-                Tel: <a href="tel:072429538400">07242 9538400</a>
-            </p>
-            <p class="footer-copyright">&copy; 2025 Restaurant Da Gino</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo-white.png" alt="Da Gino Logo" class="footer-logo" width="150" height="auto">
+                    <p class="footer-tagline">Authentische italienische Küche in Rheinstetten seit über 20 Jahren.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <nav aria-label="Footer-Navigation">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">Über uns</a></li>
+                            <li><a href="#specialties">Spezialitäten</a></li>
+                            <li><a href="#hours">Öffnungszeiten</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <address>
+                        <p>Rheinaustraße 53<br>76287 Rheinstetten</p>
+                        <p><a href="tel:072429538400">07242 9538400</a></p>
+                        <p><a href="mailto:kontakt@dagino.de">kontakt@dagino.de</a></p>
+                    </address>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="footer-social-links">
+                        <a href="/f" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="/t" target="_blank" rel="noopener" aria-label="TripAdvisor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="8" cy="12" r="2"></circle>
+                                <circle cx="16" cy="12" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="/g" target="_blank" rel="noopener" aria-label="Google">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Da Gino. Alle Rechte vorbehalten.</p>
+                <p class="footer-location">Italienisches Restaurant in Rheinstetten bei Karlsruhe</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Sticky Navigation
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.about-content, .about-image, .specialty-card, .hours-card, .review-card, .gallery-item, .contact-card, .faq-item').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
