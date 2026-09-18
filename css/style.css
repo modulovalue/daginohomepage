@@ -414,8 +414,10 @@ a.contact-card:hover span {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 16px;
     background: #1f2124;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .map-consent-canvas {
@@ -431,11 +433,28 @@ a.contact-card:hover span {
     background-size: 100% 100%, 170px 170px, 170px 170px, 42px 42px, 42px 42px;
 }
 
+.map-consent::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    width: 620px;
+    height: 620px;
+    max-width: 130%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(31, 33, 36, 0.92) 0%, rgba(31, 33, 36, 0.75) 45%, rgba(31, 33, 36, 0) 70%);
+    pointer-events: none;
+}
+
 .map-consent-inner {
     position: relative;
+    z-index: 1;
     text-align: center;
+    width: 100%;
     max-width: 470px;
-    padding: 40px 30px;
+    min-width: 0;
+    padding: 40px 24px;
 }
 
 .map-consent-inner > svg {
@@ -873,5 +892,19 @@ a.contact-card:hover span {
 
     .legal {
         padding: 40px 0 70px;
+    }
+}
+
+@media (max-width: 600px) {
+    .map-consent {
+        min-height: 360px;
+    }
+
+    .map-consent-inner {
+        padding: 32px 4px;
+    }
+
+    .map-consent p {
+        font-size: 0.9rem;
     }
 }
