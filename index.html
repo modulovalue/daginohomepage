@@ -287,15 +287,18 @@
         <div class="container">
             <h2 class="script-title">Anfahrt</h2>
             <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d8.2940694!3d48.958989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4692c423b34c80ff!2sDa%20Gino!5e0!3m2!1sde!2sde!4v1702000000000!5m2!1sde!2sde"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <div class="map-consent" id="map-consent">
+                    <div class="map-consent-canvas" aria-hidden="true"></div>
+                    <div class="map-consent-inner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <h3>Karte von Google Maps</h3>
+                        <p>Beim Laden der Karte wird Ihre IP-Adresse an Google übertragen. Deshalb laden wir sie erst, wenn Sie es möchten.</p>
+                        <button type="button" class="map-consent-button" id="map-consent-button">Karte laden</button>
+                    </div>
+                </div>
             </div>
             <div class="map-info">
                 <p>Rheinaustraße 53, 76287 Rheinstetten</p>
@@ -371,5 +374,23 @@
             <p class="footer-copyright">&copy; 2025 Restaurant Da Gino</p>
         </div>
     </footer>
+<script>
+(function () {
+    var button = document.getElementById('map-consent-button');
+    if (!button) return;
+    button.addEventListener('click', function () {
+        var placeholder = document.getElementById('map-consent');
+        var frame = document.createElement('iframe');
+        frame.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d8.2940694!3d48.958989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4692c423b34c80ff!2sDa%20Gino!5e0!3m2!1sde!2sde!4v1702000000000!5m2!1sde!2sde';
+        frame.width = '100%';
+        frame.height = '450';
+        frame.style.border = '0';
+        frame.setAttribute('allowfullscreen', '');
+        frame.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+        frame.title = 'Restaurant Da Gino auf Google Maps';
+        placeholder.parentNode.replaceChild(frame, placeholder);
+    });
+})();
+</script>
 </body>
 </html>

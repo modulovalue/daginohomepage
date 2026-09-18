@@ -408,6 +408,76 @@ a.contact-card:hover span {
     filter: grayscale(30%) contrast(1.1);
 }
 
+.map-consent {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2124;
+    overflow: hidden;
+}
+
+.map-consent-canvas {
+    position: absolute;
+    inset: 0;
+    background-color: #212328;
+    background-image:
+        linear-gradient(115deg, transparent 47.6%, rgba(255, 255, 255, 0.07) 47.6%, rgba(255, 255, 255, 0.07) 52.4%, transparent 52.4%),
+        linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 100% 100%, 170px 170px, 170px 170px, 42px 42px, 42px 42px;
+}
+
+.map-consent-inner {
+    position: relative;
+    text-align: center;
+    max-width: 470px;
+    padding: 40px 30px;
+}
+
+.map-consent-inner > svg {
+    color: var(--color-gold);
+}
+
+.map-consent h3 {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    margin: 14px 0 10px;
+}
+
+.map-consent p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.map-consent-button {
+    font-family: var(--font-body);
+    display: inline-block;
+    padding: 14px 30px;
+    background: var(--color-gold);
+    color: var(--color-dark);
+    border: 0;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.map-consent-button:hover,
+.map-consent-button:focus-visible {
+    background: var(--color-text);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
 .map-info {
     text-align: center;
     margin-top: 2rem;
